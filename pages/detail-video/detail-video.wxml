@@ -1,0 +1,18 @@
+<!--pages/detail-video/detail-video.wxml-->
+<!-- video组件：播放视频 -->
+<video class="video" src="{{MVUrl}}" danmu-list="{{danmuList}}"></video>
+<scroll-view class="content" scroll-y>
+  <view class="info">
+    <view>{{ mvInfo.artistName }}</view>
+    <view>-------------------------------------------------------</view>
+    <view>该页面请求接口不再返回数据，所以没有相关视频推荐</view>
+  </view>
+  <view class="related">
+    <block wx:for="{{mvRelated}}" wx:key="vid">
+      <view class="item">
+        <image src="{{item.coverUrl}}" mode="widthFix"></image>
+        <view>{{item.title}}</view>
+      </view>
+    </block>
+  </view>
+</scroll-view>
